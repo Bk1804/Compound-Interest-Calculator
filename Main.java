@@ -4,7 +4,7 @@ import java.util.*;
 public class Main {
 	public static void main(String[] args) {
 		// Compound Interest Calculator
-	// A = P*(1+i)^(n*t)
+	// A = P*(1 + i/t)^(n*t)
 	// where A = total amount
 	// P = principal amount
 	// i = interest rate
@@ -18,23 +18,22 @@ public class Main {
 		int n; // # of years
 		int t; // # of times compounded in a year
 		
-		System.out.print("What is the prinicpal amount: ");
+		System.out.print("Enter is the prinicpal amount: ");
 		principal = scanner.nextDouble();
 		
-		System.out.print("What is the interest rate (in percentage): ");
-		i = scanner.nextDouble();
+		System.out.print("Enter is the interest rate (in percentage): ");
+		i = scanner.nextDouble() / 100;
 		
-		System.out.print("What is the number of times the money is compounded in a year: ");
+		System.out.print("Enter is the number of times the money is compounded in a year: ");
 		t = scanner.nextInt();
 		
-		System.out.print("What is the number of years: ");
+		System.out.print("Enter is the number of years: ");
 		n = scanner.nextInt();
 		
-		totalamount = principal*Math.pow(i/100+1, n*t);
+		totalamount = principal*Math.pow(i/t + 1, n*t);
 		
 		System.out.printf("The total amount is %.2f", totalamount);
 		
 		scanner.close();
 	}
 }
-
