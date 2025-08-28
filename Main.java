@@ -1,29 +1,40 @@
-
 package thesecondtrial;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 	public static void main(String[] args) {
-		
 		// Compound Interest Calculator
-		// This program will take as input principal, interest rate and number of periods
-		// And calculate total funds at the end of the time period stated
-		// total_funds = P*(i+1)^n where n is the number of periods and P is the principal amount
-		// compound_interest = total_funds - P;
+	// A = P*(1+i)^(n*t)
+	// where A = total amount
+	// P = principal amount
+	// i = interest rate
+	// n = number of years
+	// t = number of times compounded in a year
+		Scanner scanner = new Scanner(System.in);
 		
-	Scanner scanner = new Scanner(System.in);
-	System.out.print("What is the principal amount: ");
-	float P = scanner.nextFloat();
-	
-	System.out.print("What is the interest rate (in percentage): ");
-	float i = scanner.nextFloat()/100;
-	
-	System.out.print("What is the number of periods: ");
-	int n = scanner.nextInt();
-	
-	double compound_i = Math.pow(i+1.00, n)*P - P;
-	
-	System.out.printf("Compound interest is: %.2f " ,compound_i);
-	scanner.close();	
-	}	
+		double principal;
+		double totalamount;
+		double i; // interest
+		int n; // # of years
+		int t; // # of times compounded in a year
+		
+		System.out.print("What is the prinicpal amount: ");
+		principal = scanner.nextDouble();
+		
+		System.out.print("What is the interest rate (in percentage): ");
+		i = scanner.nextDouble();
+		
+		System.out.print("What is the number of times the money is compounded in a year: ");
+		t = scanner.nextInt();
+		
+		System.out.print("What is the number of years: ");
+		n = scanner.nextInt();
+		
+		totalamount = principal*Math.pow(i/100+1, n*t);
+		
+		System.out.printf("The total amount is %.2f", totalamount);
+		
+		scanner.close();
+	}
 }
+
