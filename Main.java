@@ -32,8 +32,9 @@ public class Main {
 		
 		totalamount = principal*Math.pow(i/t + 1, n*t);
 		
-		System.out.printf("The total amount after %d year(s) is %.2f",n, totalamount);
+		System.out.printf("The total amount after %d year(s) is $%.2f",n, totalamount);
 		
 		scanner.close();
 	}
 }
+
